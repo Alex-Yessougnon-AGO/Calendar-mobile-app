@@ -1,3 +1,4 @@
+import 'package:calendar_mobile_app/pages/calendar_page.dart';
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -459,26 +460,31 @@ class _MyHomePageState extends State<MyHomePage> {
             // Bouton
             SizedBox(height: 20,),
             Center(
-              child: Container(
-                width: 243,
-                height: 52,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(29),
-                  gradient: LinearGradient(
-                        colors: [
-                          Color(0xFFDE496E),
-                          Color(0xFFFF6E91),
-                        ],
-                        begin: Alignment.topLeft,
-                        end: Alignment.bottomRight,
-                      ),
-                ),
-                child: Center(
-                  child: Text("Set schedule", style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white
-                  ),),
+              child: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => CalendarPage()));
+                },
+                child: Container(
+                  width: 243,
+                  height: 52,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(29),
+                    gradient: LinearGradient(
+                          colors: [
+                            Color(0xFFDE496E),
+                            Color(0xFFFF6E91),
+                          ],
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                        ),
+                  ),
+                  child: Center(
+                    child: Text("Set schedule", style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                      color: Colors.white
+                    ),),
+                  ),
                 ),
               ),
             )
